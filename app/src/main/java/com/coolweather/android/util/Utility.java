@@ -13,13 +13,12 @@ import org.json.JSONObject;
 import java.net.ResponseCache;
 import java.util.jar.JarException;
 
-
+/**
+ * Created by Administrator on 2018/6/12.
+ */
 public class Utility {
-
-    /*
-    解析和处理服务器返回的省级数据
-    */
-    public static boolean handleProvinceResponse(String response){
+    /*解析和处理服务器返回的省级数据*/
+    public static boolean handleProvincceResponse(String response){
         if (!TextUtils.isEmpty(response)){
             try{
                 JSONArray allProvinces = new JSONArray(response);
@@ -78,3 +77,4 @@ public class Utility {
         return false;
     }
 }
+

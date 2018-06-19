@@ -1,11 +1,12 @@
-package com.coolweather.android.util;
+package com.coolweather.android;
+
+
 
 import android.annotation.TargetApi;
-import android.app.DownloadManager;
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.coolweather.android.R;
 import com.coolweather.android.db.City;
 import com.coolweather.android.db.County;
 import com.coolweather.android.db.Province;
+import com.coolweather.android.util.HttpUtil;
+import com.coolweather.android.util.Utility;
 
 import org.litepal.crud.DataSupport;
 
@@ -61,11 +63,12 @@ public class ChooseAreaFragment extends Fragment {
     private int currentLevel;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedinstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState){
         View view=inflater.inflate(R.layout.choose_area,container,false);
         titleText = (TextView) view.findViewById(R.id.title_text);
-        backButton = (Button) view.findViewById(R.id.back_button); listView    =   (ListView)view.findViewById(R.id.list_view);
-        adapter= new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,dataList);
+        backButton = (Button) view.findViewById(R.id.back_button);
+        listView    =   (ListView)view.findViewById(R.id.list_view);
+        adapter= new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,dataList);
         listView.setAdapter(adapter);
         return view;
     }
@@ -162,7 +165,7 @@ public class ChooseAreaFragment extends Fragment {
         showProgressDialog();
         HttpUtil.sendOkHttpRequest(address, new Callback() {
             @Override
-            public void onResponse(Call call, Response response)throws IOException{
+            public void onResponse(Call call, Response response)throws IOException {
                 String responseText = response.body().string();
                 boolean result = false;
                 if ("province".equals(type)){

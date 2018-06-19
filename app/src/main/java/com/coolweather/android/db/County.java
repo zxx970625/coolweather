@@ -3,10 +3,14 @@ package com.coolweather.android.db;
 import org.litepal.crud.DataSupport;
 
 public class County extends DataSupport {
+
     private int id;
+
     private String countyName;
-    private String weatherid;
-    private int cityid;
+
+    private String weatherId;
+
+    private int cityId;
 
     public int getId() {
         return id;
@@ -20,23 +24,24 @@ public class County extends DataSupport {
         return countyName;
     }
 
-    public void setCountyName(String countryName) {
-        this.countyName = countryName;
+    public void setCountyName(String countyName) {
+        this.countyName = countyName;
     }
 
-    public String getWeatherid() {
-        return weatherid;
+    public String getWeatherId() {
+        return weatherId;
     }
 
-    public void setWeatherid(String weatherid) {
-        this.weatherid = weatherid;
+    public void setWeatherId(String weatherId) {
+        this.weatherId = weatherId;
     }
 
-    public int getCityid() {
-        return cityid;
+    public int getCityId() {
+        return cityId;
     }
 
-    public void setCityid(int cityid) {
-        this.cityid = cityid;
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
+
 }

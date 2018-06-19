@@ -4,6 +4,8 @@ package com.coolweather.android;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import android.view.LayoutInflater;
@@ -53,7 +55,8 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView carWashText;
 
     private TextView sportText;
-
+    public DrawerLayout drawerLayout;
+    public SwipeRefreshLayout swipeRefresh;
 
 
     @Override

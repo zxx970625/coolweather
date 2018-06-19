@@ -3,12 +3,16 @@ package com.coolweather.android.db;
 import org.litepal.crud.DataSupport;
 
 public class City extends DataSupport {
-    private int id;
-    private String cityName;
-    private int cityCode;
-    private int provinceid;
 
-    public int getid() {
+    private int id;
+
+    private String cityName;
+
+    private int cityCode;
+
+    private int provinceId;
+
+    public int getId() {
         return id;
     }
 
@@ -32,12 +36,12 @@ public class City extends DataSupport {
         this.cityCode = cityCode;
     }
 
-    public int getProvinceid() {
-        return provinceid;
+    public int getProvinceId() {
+        return provinceId;
     }
 
-    public void setProvinceid(int provinceid) {
-        this.provinceid = provinceid;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
+
 }
-
